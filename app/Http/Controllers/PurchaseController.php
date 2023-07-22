@@ -33,42 +33,43 @@ class PurchaseController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $ind = $request->produto;
-        $partprodutoo = substr($ind, 0, 1);
-        $indi = $request->preco;
-        $partprecoo = substr($indi, 0, 1);
-
-        if($partprodutoo != $partprecoo){
-            return redirect()->back()->withInput()->withErrors(['Selecione o Número do Produto e do Preço Iguais']);
-        }
-
+    public function store(Request $request , Product $product)
+    {   
+        // dd($request->all());
         $clientee = new Purchase();
-
-        if(empty($request->cliente)){
+        $user = Auth::user();
+        $price = 0;
+        $productname = '';
+        $stock = 0;
+        $product = Product::all();
+        foreach($product as $p) {
+            if((int)$request->produto == $p->id){
+                $price = $p->price;
+                $productname = $p->name;
+                $stock = $p->stock;
+            }
+        }
+        
+        // check stock
+        if((int)$request->unit > $stock){
             return redirect()->back()->withInput()->withErrors(['Preencha os dados corretamente']);
         }
-        $indice = $request->cliente;
-        $partInice = substr($indice, 4, 30);
-        $clientee->client = $partInice;
 
-        if(empty($request->produto)){
-            return redirect()->back()->withInput()->withErrors(['Preencha os dados corretamente']);
-        }
-        $indic = $request->produto;
-        $partPro = substr($indic, 4, 30);
-        $clientee->product = $partPro;
+     
+        $clientee->client =  $request->cliente;
+        $clientee->user = $user->name;
+        $clientee->product=$productname;
+        $clientee->price= $price;
+        $clientee->total = (intval($price)*intval($request->unit));
+        $clientee->unit = $request->unit;
+         
+       $clientee->save();
 
-        $n = Auth::user();
-        $clientee->user = $n->name;
-//        ----------------------------
-        $indic = $request->preco;
-        $partPrice = substr($indic, 6, 30);
+         $product = Product::whereId((int)$request->produto)->update([
+        'stock' => $stock - (int)$request->unit
+        ]);
+      
 
-        $clientee->price = $partPrice;
-
-        $clientee->save();
 
         return redirect()->route('pdf.compra', compact('clientee'));
     }

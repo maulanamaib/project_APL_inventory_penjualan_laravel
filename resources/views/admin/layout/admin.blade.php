@@ -4,7 +4,7 @@
 <head lang="pt-br">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Painel | Administrativo</title>
+    <title>Panel | Administration</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -61,12 +61,12 @@
                     </span>
                     <div class="dropdown-divider"></div>
                     <a href="{{route('adm.logout')}}" class="dropdown-item">
-                        <i class="fas fa-sign mr-2"></i> Sair
+                        <i class="fas fa-sign mr-2"></i> To go out
                     </a>
 
                     <div class="dropdown-divider"></div>
                     <a href="{{route('adm.setting')}}" class="dropdown-item">
-                        <i class="fas fa-cogs mr-2"></i> Configurações
+                        <i class="fas fa-cogs mr-2"></i> Configuration
                     </a>
 
                 </div>
@@ -80,7 +80,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
-            <span class="brand-text font-weight-light"> <strong>Controler de Caixa</strong></span>
+            <span class="brand-text font-weight-light"> <strong>Toko Pemuda Bakry</strong></span>
         </a>
 
         <!-- Sidebar -->
@@ -104,37 +104,37 @@
                             <li class="nav-item">
                                 <a href="{{route('product.index')}}"  class="nav-link {{Route::current()->getName() === 'product.index' ? 'active':''}} ">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Produto</p>
+                                    <p>Product</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('painel.userAll')}}"  class="nav-link {{Route::current()->getName() === 'painel.userAll' ? 'active':''}}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Usuário</p>
+                                    <p>User</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('client.index')}}" class="nav-link {{Route::current()->getName() === 'client.index' ? 'active':''}}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Cliente</p>
+                                    <p>Client</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('provider.index')}}" class="nav-link {{Route::current()->getName() === 'provider.index' ? 'active':''}}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Fornecedor</p>
+                                    <p>Supplier</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('purchase.index')}}" class="nav-link {{Route::current()->getName() === 'purchase.index' ? 'active':''}}">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Compra</p>
+                                    <p>Purchase</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{route('adm.logout')}}" class="nav-link ">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Sair</p>
+                                    <p>logout</p>
                                 </a>
                             </li>
 
@@ -171,8 +171,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; {{date("Y")}} <a href="http://adminlte.io">Reginaldo</a>.</strong>
-        Todos os Direitos Reservados
+        <strong><a href="http://adminlte.io">Toko Pemuda Bakary</a>.</strong>
         <div class="float-right d-none d-sm-inline-block">
             <b>Version</b> 1.0.0
 

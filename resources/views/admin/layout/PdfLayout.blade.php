@@ -3,7 +3,7 @@
 <head lang="pt-br">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Painel | Administrativo</title>
+    <title>Panel | Administration</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -23,8 +23,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Copyright &copy; {{date("Y")}} <a href="http://adminlte.io">Reginaldo</a>.</strong>
-        Sistemas Inteligentes
+        <strong><a href="http://adminlte.io">Toko Pemuda Bakry</a>.</strong>
         <div class="float-right d-none d-sm-inline-block">
             <b>Version</b> 1.0.0
         </div>

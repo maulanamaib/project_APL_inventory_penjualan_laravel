@@ -2,7 +2,7 @@
 
 
 @section('contentElement')
-    <h1 class="m-0 text-dark text-uppercase"><strong> Linha de Produtos</strong></h1>
+    <h1 class="m-0 text-dark text-uppercase"><strong> Product line</strong></h1>
 @endsection
 
 @section('rowContent')
@@ -13,7 +13,7 @@
                     <span class="info-box-icon bg-info elevation-1"><a href="{{route('adm.setting')}}"><i class="fas fa-cog"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"> Cofigurações de Perfil</span>
+                        <span class="info-box-text"> Profile Settings</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -25,7 +25,7 @@
                     <span class="info-box-icon bg-danger elevation-1"><a href="{{route('painel.userAll')}}"><i class="ion ion-person-add"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Usuário</span>
+                        <span class="info-box-text">User</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -41,7 +41,7 @@
                     <span class="info-box-icon bg-success elevation-1"><a href="{{route('purchase.index')}}"><i class="fas fa-shopping-cart"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Carrinho</span>
+                        <span class="info-box-text">Cart</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -53,7 +53,7 @@
                     <span class="info-box-icon bg-warning elevation-1"> <a href="{{route('client.index')}}"><i class="fas fa-users"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Cliente</span>
+                        <span class="info-box-text">Client</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -68,12 +68,12 @@
     <div class="container">
         <div class="card card-info">
             <div class="card-header">
-                <h3 class="card-title"><b>PRODUTOS</b></h3>
+                <h3 class="card-title"><b>PRODUCTS</b></h3>
                 <form action="{{route('painel.searchProduct')}}" method="post">
                     @csrf
                     <div class="col-sm-12">
                         <div id="example1_filter" class="dataTables_filter float-right">
-                                <input type="search" name="code" class="form-control form-control-sm "  placeholder="Pesquisar Pelo Codigo" aria-controls="example1">
+                                <input type="search" name="code" class="form-control form-control-sm "  placeholder="Search by Name" aria-controls="example1">
                         </div>
                     </div>
                 </form>
@@ -83,12 +83,12 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
-                        <th>Unidade</th>
-                        <th>Código</th>
-                        <th>Preço(R$)</th>
-                        <th>Estoque</th>
-{{--                        <th>Empresa</th>--}}
+                        <th>Name</th>
+                        <th>Unit</th>
+                        <th>Code</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+{{--                        <th>Company</th>--}}
                     </tr>
                     </thead>
                     <tbody>
@@ -134,12 +134,12 @@
 
             <!-- /.card-body -->
             <div class="card-footer clearfix">
-                <a href="#" data-toggle="modal" data-target="#myModalcad" class="btn btn-sm btn-info float-left">Novo Produto</a>
+                <a href="#" data-toggle="modal" data-target="#myModalcad" class="btn btn-sm btn-info float-left">New product</a>
                 <div class="modal fade" id="myModalcad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title float-left" id="myModalLabel"><strong>Cadastro de Produto</strong></h4>
+                                <h4 class="modal-title float-left" id="myModalLabel"><strong>Product registration</strong></h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -158,12 +158,12 @@
                                         @endforeach
                                     @endif
                                     <div class="form-group">
-                                        <label for="recipient-name" class="control-label">Nome:</label>
+                                        <label for="recipient-name" class="control-label">Name:</label>
                                         <input name="nome" type="text" class="form-control">
                                     </div>
 
                                         <div class="form-group">
-                                            <label>Unidade</label>
+                                            <label>Unit</label>
                                             <select class="form-control" name="unidade">
                                                 <option>UNI</option>
                                                 <option>KG</option>
@@ -171,22 +171,22 @@
                                         </div>
 
                                     <div class="form-group">
-                                        <label for="recipient-name" class="control-label">Codigo</label>
+                                        <label for="recipient-name" class="control-label">Code</label>
                                         <input name="codigo" type="text" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="recipient-name" class="control-label">Preço</label>
+                                        <label for="recipient-name" class="control-label">Price</label>
                                         <input name="preco" type="text" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="recipient-name" class="control-label">Estoque</label>
+                                        <label for="recipient-name" class="control-label">Stock</label>
                                         <input name="stock" type="text" class="form-control">
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                                        <button type="submit" class="btn btn-success">register</button>
                                     </div>
                                 </form>
                             </div>
@@ -195,7 +195,7 @@
                 </div>
 
                 <!-- Fim Modal -->
-                <a href="{{route('pdf.produto')}}" class="btn btn-sm btn-secondary float-right"> Gerar PDF <i class="fas fa-download"></i></a>
+                <a href="{{route('pdf.produto')}}" class="btn btn-sm btn-secondary float-right"> Cetak PDF <i class="fas fa-download"></i></a>
             </div>
         </div>
     </div>

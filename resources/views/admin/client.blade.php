@@ -1,7 +1,7 @@
 @extends('admin.layout.admin')
 
 @section('contentElement')
-    <h1 class="m-0 text-dark text-uppercase"><strong>Aréa de Clientes</strong></h1>
+    <h1 class="m-0 text-dark text-uppercase"><strong>CUSTOMERS AREA</strong></h1>
 @endsection
 
 @section('rowContent')
@@ -12,7 +12,7 @@
                     <span class="info-box-icon bg-info elevation-1"><a href="{{route('adm.setting')}}"><i class="fas fa-cog"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"> Cofigurações de Perfil</span>
+                        <span class="info-box-text"> Profile Settings</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -24,7 +24,7 @@
                     <span class="info-box-icon bg-danger elevation-1"><a href="{{route('painel.userAll')}}"><i class="ion ion-person-add"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Usuário</span>
+                        <span class="info-box-text">User</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -40,7 +40,7 @@
                     <span class="info-box-icon bg-success elevation-1"><a href="{{route('purchase.index')}}"><i class="fas fa-shopping-cart"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Carrinho</span>
+                        <span class="info-box-text">Cart</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -52,7 +52,7 @@
                     <span class="info-box-icon bg-warning elevation-1"> <a href="{{route('client.index')}}"><i class="fas fa-users"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Cliente</span>
+                        <span class="info-box-text">Client</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -69,7 +69,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title"><b>CLIENTE</b></h3>
+                <h3 class="card-title"><b>Client</b></h3>
                 <form action="{{route('clienter.searchProvider')}}" method="post">
                     @csrf
                     <div class="row">
@@ -90,10 +90,10 @@
                                 <thead>
                                 <tr role="row">
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column ascending">ID</th>
-                                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column descending" aria-sort="ascending" style="">Cliente</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="">CPF</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="">Identidade</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="">Situação</th>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column descending" aria-sort="ascending" style="">Client</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="">NPWP</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="">Identitas</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="">Situation</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style=""></th>
                                 </tr>
                                 </thead>
@@ -105,7 +105,7 @@
                                         <td class="sorting_1 text-capitalize" style="">{{$cliete->client}}</td>
                                         <td class="" style="">{{$cliete->CPF}}</td>
                                         <td style="">{{$cliete->Identity}}</td>
-                                        <td style=""><span class="badge badge-success">cadastrado</span></td>
+                                        <td style=""><span class="badge badge-success">registered</span></td>
                                         <td  class="py-0 align-middle">
                                             <div class="row">
                                                 <a href="{{route('client.show', ['client' => $cliete->id])}}" class="btn btn-info"><i class="fas fa-eye"></i></a>
@@ -141,12 +141,12 @@
             <!-- /.card-body -->
 
             <div class="card-footer clearfix">
-                <a href="#" data-toggle="modal" data-target="#myModalcad" class="btn btn-sm btn-info float-left">Novo Cliente</a>
+                <a href="#" data-toggle="modal" data-target="#myModalcad" class="btn btn-sm btn-info float-left">New customer</a>
                 <div class="modal fade" id="myModalcad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title float-left" id="myModalLabel"><strong>Cadastro de Cliente</strong></h4>
+                                <h4 class="modal-title float-left" id="myModalLabel"><strong>Customer registration</strong></h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -165,22 +165,22 @@
                                         @endforeach
                                     @endif
                                     <div class="form-group">
-                                        <label for="recipient-name" class="control-label">Cliente:</label>
+                                        <label for="recipient-name" class="control-label">Client:</label>
                                         <input name="cliente" type="text" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="recipient-name" class="control-label">CPF:</label>
+                                        <label for="recipient-name" class="control-label">NPWP:</label>
                                         <input name="cpf" type="text" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="recipient-name" class="control-label">Identidade:</label>
+                                        <label for="recipient-name" class="control-label">Identity:</label>
                                         <input name="identidade" type="text" class="form-control">
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                                        <button type="submit" class="btn btn-success">register</button>
                                     </div>
                                 </form>
                             </div>
@@ -191,7 +191,7 @@
 
 
                 {{-----------------------------------------------------------------------------------------------------------}}
-                <a href="{{route('pdf.cliente')}}" class="btn btn-sm btn-secondary float-right"> Gerar PDF <i class="fas fa-download"></i></a>
+                <a href="{{route('pdf.cliente')}}" class="btn btn-sm btn-secondary float-right">Cetak PDF <i class="fas fa-download"></i></a>
             </div>
         </div>
     </div>

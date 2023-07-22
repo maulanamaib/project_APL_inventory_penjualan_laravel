@@ -1,7 +1,7 @@
 @extends('admin.layout.admin')
 
 @section('contentElement')
-    <h1 class="m-0 text-dark text-uppercase"><strong>Linha de Forncedor</strong></h1>
+    <h1 class="m-0 text-dark text-uppercase"><strong>Supplier Line</strong></h1>
 @endsection
 
 @section('rowContent')
@@ -12,7 +12,7 @@
                     <span class="info-box-icon bg-info elevation-1"><a href="{{route('adm.setting')}}"><i class="fas fa-cog"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"> Cofigurações de Perfil</span>
+                        <span class="info-box-text"> Profile Settings</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -24,7 +24,7 @@
                     <span class="info-box-icon bg-danger elevation-1"><a href="{{route('painel.userAll')}}"><i class="ion ion-person-add"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Usuário</span>
+                        <span class="info-box-text">User</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -40,7 +40,7 @@
                     <span class="info-box-icon bg-success elevation-1"><a href="{{route('purchase.index')}}"><i class="fas fa-shopping-cart"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Carrinho</span>
+                        <span class="info-box-text">Cart</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -52,7 +52,7 @@
                     <span class="info-box-icon bg-warning elevation-1"> <a href="{{route('client.index')}}"><i class="fas fa-users"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Cliente</span>
+                        <span class="info-box-text">Client</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -67,7 +67,7 @@
     <div class="modal-dialog" >
         <div class="modal-content col-sm-12">
             <div class="modal-header">
-                <h4 class="modal-title float-left"><strong>Atualizando Fornecedor</strong></h4>
+                <h4 class="modal-title float-left"><strong>Updating Supplier</strong></h4>
             </div>
             <div class="modal-body col-12">
                 <form method="POST" action="{{route('provider.update', ['provider' => $provide])}}" enctype="multipart/form-data">
@@ -85,12 +85,12 @@
                         @endforeach
                     @endif
                     <div class="form-group">
-                        <label for="recipient-name" class="control-label">Fornecedor:</label>
+                        <label for="recipient-name" class="control-label">Supplier:</label>
                         <input name="fornecedor" value="{{$provide->provider}}" type="text" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label for="recipient-name" class="control-label">Empresa</label>
+                        <label for="recipient-name" class="control-label">Company</label>
                         <input name="empresa" value="{{$provide->company}}" type="text" class="form-control">
                     </div>
 
@@ -100,14 +100,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="recipient-name" class="control-label">Produto:</label>
+                        <label for="recipient-name" class="control-label">Product:</label>
                         <input name="stock" readonly value="{{$provider->name}}" type="text" class="form-control">
                     </div>
 
 
                     <div class="modal-footer">
-                        <a href="{{route('provider.index')}}" type="submit" class="btn btn-secondary">Voltar</a>
-                        <button type="submit" class="btn btn-success">Atualizar</button>
+                        <a href="{{route('provider.index')}}" type="submit" class="btn btn-secondary">To go back</a>
+                        <button type="submit" class="btn btn-success">Update</button>
                     </div>
                 </form>
             </div>

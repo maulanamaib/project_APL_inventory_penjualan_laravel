@@ -16,9 +16,11 @@ class CreatePurchasesTable extends Migration
         Schema::create('purchases', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('client');
+            $table->string('user');
             $table->string('product');
             $table->string('price');
-            $table->string('user');
+            $table->string('unit');
+            $table->string('total');
             $table->timestamps();
         });
     }

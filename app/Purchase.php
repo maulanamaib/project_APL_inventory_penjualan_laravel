@@ -13,4 +13,4 @@ class Purchase extends Model
     protected $fillable = [
         'client', 'product', 'price', 'user'
     ];
-}
+} 

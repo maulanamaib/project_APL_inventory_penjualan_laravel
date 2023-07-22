@@ -5,7 +5,7 @@
 
             <!-- Icon -->
 {{--            <div class="fadeIn first">--}}
-{{--               <h2>Controle de Estoque</h2>--}}
+{{--               <h2>Inventory control</h2>--}}
 {{--            </div>--}}
 
         <div id="formContent">
@@ -29,8 +29,8 @@
 
             <!-- Remind Passowrd -->
             <div id="formFooter">
-                Ainda não tem conta ?
-                <a class="underlineHover" href="{{route('adm.new')}}"> Clique aqui</a>
+                Don't have an account yet?
+                <a class="underlineHover" href="{{route('adm.new')}}"> Click here</a>
             </div>
 
         </div>

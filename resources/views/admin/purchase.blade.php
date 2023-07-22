@@ -1,7 +1,7 @@
 @extends('admin.layout.admin')
 
 @section('contentElement')
-    <h1 class="m-0 text-dark text-uppercase"><strong>Aréa de Compras</strong></h1>
+    <h1 class="m-0 text-dark text-uppercase"><strong>Shopping area</strong></h1>
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
         </div>
         <div class="card card-default">
             <div class="card-header">
-                <h3 class="card-title"><b>Carrinho</b></h3>
+                <h3 class="card-title"><b>Cart</b></h3>
             </div>
             <!-- /.card-header -->
             <form action="{{route('purchase.store')}}" method="post">
@@ -32,9 +32,9 @@
 
                         <div class="col-sm-5" data-select2-id="53">
                             <div class="form-group mb-5 mt-2">
-                                <label>Cliente</label>
+                                <label>Client</label>
                                 <select class="form-control" name="cliente" required>
-                                    <option value="">--Selecione o Cliente--</option>
+                                    <option value="">--Select the Client--</option>
                                     @if(isset($cliente))
                                         @foreach($cliente as $pr)
                                             <option>{{$pr->id}} - {{$pr->client}}</option>
@@ -44,27 +44,21 @@
                             </div>
 
                                 <div class="form-group mt-5 ">
-                                    <label>Produto</label>
+                                    <label>Product</label>
                                     <select class="form-control" name="produto" required>
-                                        <option value="">--Selecione o Produto--</option>
+                                        <option value="">--Select the Product--</option>
                                         @if(isset($produto))
                                             @foreach($produto as $p)
-                                                <option class="text-capitalize">{{$p->id}} - {{$p->name}}</option>
+                                                <option class="text-capitalize" value={{$p->id}}>{{$p->id}} - {{$p->name}} | Rp {{$p->price}} | Stock {{$p->stock}}</option>
                                             @endforeach
                                         @endif
                                     </select>
                                 </div>
 
+                            
                                 <div class="form-group mt-5 ">
-                                    <label>Preço</label>
-                                    <select class="form-control" name="preco" required>
-                                        <option value="">--Selecione o Valor do Produto--</option>
-                                        @if(isset($produto))
-                                            @foreach($produto as $p)
-                                                <option>{{$p->id}} - R$ {{$p->price}}</option>
-                                            @endforeach
-                                        @endif
-                                    </select>
+                                    <label>Units</label>
+                                    <input type="number" class="form-control" required name="unit" >
                                 </div>
 
                                 <div class="mt-5">
@@ -75,10 +69,10 @@
                                               <i class="fas fa-ellipsis-v"></i>
                                             </span>
                                             <div class="icheck-primary d-inline ml-2">
-                                                <input type="checkbox" value="" name="todo6" id="todoCheck6" required>
+                                                <input type="checkbox" value="check" name="todo6" id="todoCheck6" required>
                                                 <label for="todoCheck6"></label>
                                             </div>
-                                            <span class="text">Aceito todos os termos de Compromsso</span>
+                                            <span class="text">I accept all terms of the Commitment</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -91,7 +85,7 @@
                         </div>
 
                         <div class="container">
-                            <button class="btn btn-success">Finalizar compra</button>
+                            <button class="btn btn-success">checkout</button>
                         </div>
                     </div>
                         <!-- /.col -->

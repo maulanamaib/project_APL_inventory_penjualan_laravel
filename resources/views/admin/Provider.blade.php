@@ -1,7 +1,7 @@
 @extends('admin.layout.admin')
 
 @section('contentElement')
-    <h1 class="m-0 text-dark text-uppercase"><strong>Aréa de Fornecedores</strong></h1>
+    <h1 class="m-0 text-dark text-uppercase"><strong>Supplier Area</strong></h1>
 @endsection
 
 
@@ -13,7 +13,7 @@
                     <span class="info-box-icon bg-info elevation-1"><a href="{{route('adm.setting')}}"><i class="fas fa-cog"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"> Cofigurações de Perfil</span>
+                        <span class="info-box-text"> Profile Settings</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -25,7 +25,7 @@
                     <span class="info-box-icon bg-danger elevation-1"><a href="{{route('painel.userAll')}}"><i class="ion ion-person-add"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Usuário</span>
+                        <span class="info-box-text">User</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -41,7 +41,7 @@
                     <span class="info-box-icon bg-success elevation-1"><a href="{{route('purchase.index')}}"><i class="fas fa-shopping-cart"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Carrinho</span>
+                        <span class="info-box-text">Cart</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -53,7 +53,7 @@
                     <span class="info-box-icon bg-warning elevation-1"> <a href="{{route('client.index')}}"><i class="fas fa-users"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Cliente</span>
+                        <span class="info-box-text">Client</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -69,13 +69,13 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title"><b>FORNECEDORES</b></h3>
+                <h3 class="card-title"><b>SUPPLIERS</b></h3>
                 <form action="{{route('fornecedor.searchProvider')}}" method="post">
                     @csrf
                     <div class="row">
                         <div class="col-sm-12">
                             <div id="example1_filter" class="dataTables_filter float-right">
-                                <input name="company" id="pesquisa" type="search" class="form-control form-control-sm" placeholder="Pesquisar Pela Empresa" aria-controls="example1">
+                                <input name="company" id="pesquisa" type="search" class="form-control form-control-sm" placeholder="Search by Name" aria-controls="example1">
                             </div>
                         </div>
                     </div>
@@ -90,11 +90,11 @@
                                 <thead>
                                 <tr role="row">
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column ascending">ID</th>
-                                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column descending" aria-sort="ascending" style="">Fornecedor</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="">Empresa</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="">CNPJ</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="">Iden. Produto</th>
-                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="">Situação</th>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column descending" aria-sort="ascending" style="">Supllier</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="">Company</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="">NPWP Badan</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="">Identification Product</th>
+                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="">Situation</th>
                                     <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style=""></th>
                                 </tr>
                                 </thead>
@@ -108,7 +108,7 @@
                                         <td style="">{{$prov->CNPJ}}</td>
                                         <td style="">{{$prov->stock}}</td>
 {{--                                        <td style="">{{$provide->stock}}</td>--}}
-                                        <td style=""><span class="badge badge-success">cadastrado</span></td>
+                                        <td style=""><span class="badge badge-success">registered</span></td>
                                         <td  class="py-0 align-middle">
                                             <div class="row">
                                                 <a href="{{route('provider.show', ['provider' => $prov->id])}}" class="btn btn-info"><i class="fas fa-eye"></i></a>
@@ -144,12 +144,12 @@
             <!-- /.card-body -->
 
             <div class="card-footer clearfix">
-                <a href="#" data-toggle="modal" data-target="#myModalcad" class="btn btn-sm btn-info float-left">Novo Fornecedor</a>
+                <a href="#" data-toggle="modal" data-target="#myModalcad" class="btn btn-sm btn-info float-left">New supplier</a>
                 <div class="modal fade" id="myModalcad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title float-left" id="myModalLabel"><strong>Cadastro de Fornecedor</strong></h4>
+                                <h4 class="modal-title float-left" id="myModalLabel"><strong>Supplier Registration</strong></h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -168,27 +168,27 @@
                                         @endforeach
                                     @endif
                                     <div class="form-group">
-                                        <label for="recipient-name" class="control-label">Fornecedor:</label>
+                                        <label for="recipient-name" class="control-label">Supplier:</label>
                                         <input name="fornecedor" type="text" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="recipient-name" class="control-label">Empresa</label>
+                                        <label for="recipient-name" class="control-label">Company</label>
                                         <input name="empresa" type="text" class="form-control">
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="recipient-name" class="control-label">CNPJ</label>
+                                        <label for="recipient-name" class="control-label">NPWP Badan</label>
                                         <input name="cnpj" type="text" class="form-control">
                                     </div>
 
 {{--                                    <div class="form-group">--}}
-{{--                                        <label for="recipient-name" class="control-label">ID do Produto</label>--}}
+{{--                                        <label for="recipient-name" class="control-label">ID of product</label>--}}
 {{--                                        <input name="stock" type="text" class="form-control">--}}
 {{--                                    </div>--}}
 
                                     <div class="form-group">
-                                        <label>ID do Produto</label>
+                                        <label>ID of product</label>
                                         <select class="form-control" name="stock">
                                             <option value="">--Selecione um o produto--</option>
                                             @if(isset($provide))
@@ -200,7 +200,7 @@
                                     </div>
 
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                                        <button type="submit" class="btn btn-success">register</button>
                                     </div>
                                 </form>
                             </div>
@@ -211,7 +211,7 @@
 
 
 {{-----------------------------------------------------------------------------------------------------------}}
-                <a href="{{route('pdf.fornecedor')}}" class="btn btn-sm btn-secondary float-right"> Gerar PDF <i class="fas fa-download"></i></a>
+                <a href="{{route('pdf.fornecedor')}}" class="btn btn-sm btn-secondary float-right"> Cetak PDF <i class="fas fa-download"></i></a>
             </div>
         </div>
     </div>

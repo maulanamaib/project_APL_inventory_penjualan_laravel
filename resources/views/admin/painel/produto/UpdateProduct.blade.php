@@ -1,7 +1,7 @@
 @extends('admin.layout.admin')
 
 @section('contentElement')
-    <h1 class="m-0 text-dark text-uppercase"><strong> Linha de Produtos</strong></h1>
+    <h1 class="m-0 text-dark text-uppercase"><strong> Line Product</strong></h1>
 @endsection
 
 @section('rowContent')
@@ -12,7 +12,7 @@
                     <span class="info-box-icon bg-info elevation-1"><a href="{{route('adm.setting')}}"><i class="fas fa-cog"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"> Cofigurações de Perfil</span>
+                        <span class="info-box-text"> Setting Profile</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -24,7 +24,7 @@
                     <span class="info-box-icon bg-danger elevation-1"><a href="{{route('painel.userAll')}}"><i class="ion ion-person-add"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Usuário</span>
+                        <span class="info-box-text">User</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -40,7 +40,7 @@
                     <span class="info-box-icon bg-success elevation-1"><a href="{{route('purchase.index')}}"><i class="fas fa-shopping-cart"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Carrinho</span>
+                        <span class="info-box-text">Cart</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -52,7 +52,7 @@
                     <span class="info-box-icon bg-warning elevation-1"> <a href="{{route('client.index')}}"><i class="fas fa-users"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Cliente</span>
+                        <span class="info-box-text">Client</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -67,7 +67,7 @@
         <div class="modal-dialog" >
             <div class="modal-content col-sm-12">
                 <div class="modal-header">
-                    <h4 class="modal-title float-left"><strong>Atualizando Produto</strong></h4>
+                    <h4 class="modal-title float-left"><strong>Updating Product</strong></h4>
                 </div>
                 <div class="modal-body col-12">
                     <form method="POST" action="{{route('product.update', ['product' => $product])}}" enctype="multipart/form-data">
@@ -85,11 +85,11 @@
                             @endforeach
                         @endif
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">Nome:</label>
+                            <label for="recipient-name" class="control-label">Name:</label>
                             <input name="nome" value="{{$product->name}}" type="text" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label>Unidade</label>
+                            <label>Unit</label>
                             <select class="form-control" name="unidade">
                                 @if($product->unity === "KG")
                                     <option>{{$product->unity}}</option>
@@ -103,23 +103,23 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">Codigo</label>
+                            <label for="recipient-name" class="control-label">Code</label>
                             <input name="codigo" value="{{$product->code}}" type="text" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">Preço</label>
+                            <label for="recipient-name" class="control-label">Price</label>
                             <input name="preco"  value="{{$product->price}}" type="text" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label for="recipient-name" class="control-label">Estoque:</label>
+                            <label for="recipient-name" class="control-label">Stock:</label>
                             <input name="stock" value="{{$product->stock}}" type="text" class="form-control">
                         </div>
 
                         <div class="modal-footer">
-                            <a href="{{route('product.index')}}" type="submit" class="btn btn-secondary">Voltar</a>
-                            <button type="submit" class="btn btn-success">Atualizar</button>
+                            <a href="{{route('product.index')}}" type="submit" class="btn btn-secondary">Go to back</a>
+                            <button type="submit" class="btn btn-success">Update</button>
                         </div>
                     </form>
                 </div>

@@ -1,6 +1,6 @@
 @extends('admin.layout.PdfLayout')
 
-<h4 class="m-0 text-dark text-uppercase text-center mb-5"><strong>Fornecedores no Sistema</strong></h4>
+<h4 class="m-0 text-dark text-uppercase text-center mb-5"><strong>Suppliers in the System</strong></h4>
 
 @section('content')
     <div class="card card-info mt-5">
@@ -9,11 +9,11 @@
                 <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Fornecedor</th>
-                    <th>Empresa</th>
+                    <th>Supplier</th>
+                    <th>Company</th>
                     <th>CNPJ</th>
-                    <th>ID do Produto</th>
-                    <th>Situação</th>
+                    <th>ID to Product</th>
+                    <th>Situation</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -25,7 +25,7 @@
                         <td>{{$fornece->company}}</td>
                         <td>{{$fornece->CNPJ}}</td>
                         <td class="text-center">{{$fornece->stock}}</td>
-                        <td><span class="badge badge-success">cadastrado</span></td>
+                        <td><span class="badge badge-success">registered</span></td>
 
                     </tr>
                 @endforeach

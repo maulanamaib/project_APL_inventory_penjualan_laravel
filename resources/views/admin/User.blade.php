@@ -2,7 +2,7 @@
 
 
 @section('contentElement')
-    <h1 class="m-0 text-dark text-uppercase"><strong> Usuários no Sistema</strong></h1>
+    <h1 class="m-0 text-dark text-uppercase"><strong> Users in the System</strong></h1>
 @endsection
 
 
@@ -15,7 +15,7 @@
                     <span class="info-box-icon bg-info elevation-1"><a href="{{route('adm.setting')}}"><i class="fas fa-cog"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text"> Cofigurações de Perfil</span>
+                        <span class="info-box-text"> Profile Settings</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -27,7 +27,7 @@
                     <span class="info-box-icon bg-danger elevation-1"><a href="{{route('painel.userAll')}}"><i class="ion ion-person-add"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Usuário</span>
+                        <span class="info-box-text">User</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -43,7 +43,7 @@
                     <span class="info-box-icon bg-success elevation-1"><a href="{{route('purchase.index')}}"><i class="fas fa-shopping-cart"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Carrinho</span>
+                        <span class="info-box-text">Cart</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -55,7 +55,7 @@
                     <span class="info-box-icon bg-warning elevation-1"> <a href="{{route('client.index')}}"><i class="fas fa-users"></i></a></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Cliente</span>
+                        <span class="info-box-text">Client</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -70,13 +70,13 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title"><b>USUÁRIOS</b></h3>
+                <h3 class="card-title"><b>USERS</b></h3>
                 <form action="{{route('painel.search')}}" method="post">
                     @csrf
                     <div class="row">
                             <div class="col-sm-12">
                                 <div id="example1_filter" class="dataTables_filter float-right">
-                                    <input name="name" id="pesquisa" type="search" class="form-control form-control-sm" placeholder="Pesquisar Pelo Nome" aria-controls="example1">
+                                    <input name="name" id="pesquisa" type="search" class="form-control form-control-sm" placeholder="search by name" aria-controls="example1">
                                 </div>
                             </div>
                     </div>
@@ -91,10 +91,10 @@
                                 <thead>
                                     <tr role="row">
                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column ascending">ID</th>
-                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column descending" aria-sort="ascending" style="">Nome</th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="">Telephone</th>
+                                        <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column descending" aria-sort="ascending" style="">Name</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="">Number</th>
                                         <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="">E-mail</th>
-                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="">Situação</th>
+                                        <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="">Situation</th>
                                     </tr>
                                 </thead>
 
@@ -105,7 +105,7 @@
                                             <td class="sorting_1 text-capitalize" style="">{{$use->name}}</td>
                                             <td class="" style="">{{$use->telephone}}</td>
                                             <td style="">{{$use->email}}</td>
-                                                <td style=""><span class="badge badge-success">cadastrado</span></td>
+                                                <td style=""><span class="badge badge-success">registered</span></td>
                                         </tr>
                                     </tbody>
                                 @endforeach
@@ -129,7 +129,7 @@
             </div>
             <!-- /.card-body -->
             <div class="card-footer clearfix">
-                <a href="{{route('pdf.usuario')}}" class="btn btn-sm btn-secondary float-right"> Gerar PDF <i class="fas fa-download"></i></a>
+                <a href="{{route('pdf.usuario')}}" class="btn btn-sm btn-secondary float-right"> Cetak PDF <i class="fas fa-download"></i></a>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 @extends('admin.layout.PdfLayout')
 
 @section('content')
-    <h4 class="m-0 text-dark text-uppercase text-center mb-5"><strong> Linha de Produtos</strong></h4>
+    <h4 class="m-0 text-dark text-uppercase text-center mb-5"><strong> Product line</strong></h4>
 
     <div class="card card-info mt-5">
             <div class="card-body p-0">
@@ -9,11 +9,11 @@
                     <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nome</th>
-                        <th>Unidade</th>
-                        <th>Código</th>
-                        <th>Preço(R$)</th>
-                        <th>Estoque</th>
+                        <th>Name</th>
+                        <th>Unit</th>
+                        <th>Code</th>
+                        <th>Price</th>
+                        <th>Stock</th>
                     </tr>
                     </thead>
                     <tbody>

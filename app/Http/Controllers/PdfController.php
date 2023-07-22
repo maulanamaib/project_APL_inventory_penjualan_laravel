@@ -51,6 +51,7 @@ class PdfController extends Controller
 
     public function pdfPurchase(Request $request)
     {
+        // dd($request->all());
         $compra = Purchase::find((int) $request->clientee);
         $pdffornece = Facade::loadView('admin.Pdf.PdfPurchase', compact('compra'));
 
